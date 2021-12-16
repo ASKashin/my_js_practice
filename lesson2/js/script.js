@@ -73,7 +73,6 @@ const btn12 = document.querySelector('.task-12');
 const out12 = document.querySelector('.out-12');
 btn12.onclick = () => {
     out12.innerText = 'Hello ' + input12_1.value + ' ' + input12_2.value;
-
 };
 
 // task13
@@ -82,7 +81,7 @@ const input13_2 = document.querySelector('.i-13-2');
 const btn13 = document.querySelector('.task-13');
 const out13 = document.querySelector('.out-13');
 btn13.onclick = () => {
-    out13.innerText = Number(input13_1.value) + Number(input13_2.value) ;
+    out13.innerText = Number(input13_1.value) + Number(input13_2.value);
 };
 
 // task14
@@ -138,7 +137,7 @@ btn19.onclick = () => {
     // y = parseInt(y);
     // out19.innerText = t + y;
     const t = parseInt(input19_1.value);
-    const y = +input19_2.value;
+    const y = Number(input19_2.value);
     out19.innerText = t + y;
 };
 
