@@ -6,34 +6,34 @@ console.log(a * b);
 // task2
 c = 7;
 d = 9;
-document.querySelector('.out-2').innerHTML = c / d;
+document.querySelector('.out-2').innerText = c / d;
 
 // task3
 e = 3;
 f = 5;
-document.querySelector('.out-3').innerHTML = e + f;
+document.querySelector('.out-3').innerText = e + f;
 
 // task4
 e1 = '3';
 f1 = 5;
-document.querySelector('.out-4').innerHTML = e1 + f1;
+document.querySelector('.out-4').innerText = e1 + f1;
 //при сложении строки и числа, число обрабатывается как строка.
 
 // task5
 e2 = 3;
 f2 = 0;
-document.querySelector('.out-5').innerHTML = e2 / f2;
+document.querySelector('.out-5').innerText = e2 / f2;
 //получится бесконечность при делении на 0 в js
 
 // task6
 e3 = 3;
 f3 = 'Hello';
-document.querySelector('.out-6').innerHTML = e3 + f3;
+document.querySelector('.out-6').innerText = e3 + f3;
 
 // task7
 e4 = 3;
 f4 = 'Hello';
-document.querySelector('.out-7').innerHTML = e4 * f4;
+document.querySelector('.out-7').innerText = e4 * f4;
 //NaN  так как в одной из переменных не число.
 
 // task8
@@ -63,7 +63,7 @@ const input11 = document.querySelector('.i-11');
 const btn11 = document.querySelector('.task-11');
 const out11 = document.querySelector('.out-11');
 btn11.onclick = () => {
-    out11.innerHTML = +input11.value + 10;
+    out11.innerText = Number(input11.value) + 10;
 };
 
 // task12
@@ -72,7 +72,7 @@ const input12_2 = document.querySelector('.i-12-2');
 const btn12 = document.querySelector('.task-12');
 const out12 = document.querySelector('.out-12');
 btn12.onclick = () => {
-    out12.innerHTML = 'Hello ' + input12_1.value + ' ' + input12_2.value;
+    out12.innerText = 'Hello ' + input12_1.value + ' ' + input12_2.value;
 
 };
 
@@ -82,7 +82,7 @@ const input13_2 = document.querySelector('.i-13-2');
 const btn13 = document.querySelector('.task-13');
 const out13 = document.querySelector('.out-13');
 btn13.onclick = () => {
-    out13.innerHTML = +input13_1.value + +input13_2.value;
+    out13.innerText = Number(input13_1.value) + Number(input13_2.value) ;
 };
 
 // task14
@@ -104,7 +104,7 @@ const input16_2 = document.querySelector('.i-16-2');
 const btn16 = document.querySelector('.b-16');
 const out16 = document.querySelector('.out-16');
 btn16.onclick = () => {
-    out16.innerHTML = +input16_1.value + +input16_2.value;
+    out16.innerText = +input16_1.value + +input16_2.value;
 };
 
 // task17
@@ -114,7 +114,7 @@ const out17 = document.querySelector('.out-17');
 btn17.onclick = () => {
     let t = input17.value;
     t = parseInt(t);
-    out17.innerHTML = t;
+    out17.innerText = t;
 };
 // task18
 const input18 = document.querySelector('.i-18');
@@ -132,11 +132,14 @@ const btn19 = document.querySelector('.task-19');
 const out19 = document.querySelector('.out-19');
 
 btn19.onclick = () => {
-    let t = +input19_1.value;
-    t = parseInt(t);
-    let y = +input19_2.value;
-    y = parseInt(y);
-    out19.innerHTML = t + y;
+    // let t = input19_1.value;
+    // t = parseInt(t);
+    // let y = input19_2.value;
+    // y = parseInt(y);
+    // out19.innerText = t + y;
+    const t = parseInt(input19_1.value);
+    const y = +input19_2.value;
+    out19.innerText = t + y;
 };
 
 //тут не понял так нужно было сделать или без parseInt просто отрицательные числа
@@ -150,6 +153,6 @@ const btn20 = document.querySelector('.task-20');
 const out20 = document.querySelector('.out-20');
 
 btn20.onclick = () => {
-    out20.innerHTML = 'Уважаемый ' + input20_1.value + ' ' + input20_2.value + ',' + ' ваш возраст '  + input20_3.value + ' года, по попрофессии вы ' + input20_4.value;
+    out20.innerText = 'Уважаемый ' + input20_1.value + ' ' + input20_2.value + ',' + ' ваш возраст ' + input20_3.value + ' года, по профессии вы ' + input20_4.value;
 }
 
