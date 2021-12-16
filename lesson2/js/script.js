@@ -68,11 +68,12 @@ btn11.onclick = () => {
 
 // task12
 const input12_1 = document.querySelector('.i-12_1');
-const input12_2 = document.querySelector('.i-12_1');
+const input12_2 = document.querySelector('.i-12-2');
 const btn12 = document.querySelector('.task-12');
 const out12 = document.querySelector('.out-12');
 btn12.onclick = () => {
-    out12.innerHTML = input12_1.value + ' ' + input12_2.value;
+    out12.innerHTML ='Hello ' + input12_1.value + ' ' + input12_2.value;
+
 };
 
 // task13
