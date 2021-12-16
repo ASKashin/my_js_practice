@@ -37,100 +37,100 @@ document.querySelector('.out-7').innerHTML = e4 * f4;
 //NaN  так как в одной из переменных не число.
 
 // task8
-let input8 = document.querySelector('.i-8');
+const input8 = document.querySelector('.i-8');
 const btn8 = document.querySelector('.task-8');
-btn8.onclick = function () {
+btn8.onclick = () => {
     console.log(input8.value)
 };
 
 // task9
-let input9 = document.querySelector('.i-9');
+const input9 = document.querySelector('.i-9');
 const btn9 = document.querySelector('.task-9');
-btn9.onclick = function () {
+btn9.onclick = () => {
     console.log(input9.value)
     input9.value = '';
 };
 
 // task10
-let input10 = document.querySelector('.i-10');
+const input10 = document.querySelector('.i-10');
 const btn10 = document.querySelector('.task-10');
-btn10.onclick = function () {
+btn10.onclick = () => {
     console.log(input10.value * 10);
 };
 
 // task11
-let input11 = document.querySelector('.i-11');
+const input11 = document.querySelector('.i-11');
 const btn11 = document.querySelector('.task-11');
-let out11 = document.querySelector('.out-11');
-btn11.onclick = function () {
+const out11 = document.querySelector('.out-11');
+btn11.onclick = () => {
     out11.innerHTML = +input11.value + 10;
 };
 
 // task12
-let input12_1 = document.querySelector('.i-12_1');
-let input12_2 = document.querySelector('.i-12_1');
+const input12_1 = document.querySelector('.i-12_1');
+const input12_2 = document.querySelector('.i-12_1');
 const btn12 = document.querySelector('.task-12');
-let out12 = document.querySelector('.out-12');
-btn12.onclick = function () {
+const out12 = document.querySelector('.out-12');
+btn12.onclick = () => {
     out12.innerHTML = input12_1.value + ' ' + input12_2.value;
 };
 
 // task13
-let input13_1 = document.querySelector('.i-13-1');
-let input13_2 = document.querySelector('.i-13-2');
+const input13_1 = document.querySelector('.i-13-1');
+const input13_2 = document.querySelector('.i-13-2');
 const btn13 = document.querySelector('.task-13');
-let out13 = document.querySelector('.out-13');
-btn13.onclick = function () {
+const out13 = document.querySelector('.out-13');
+btn13.onclick = () => {
     out13.innerHTML = +input13_1.value + +input13_2.value;
 };
 
 // task14
-let input14 = document.querySelector('.i-14');
+const input14 = document.querySelector('.i-14');
 const btn14 = document.querySelector('.task-14');
-btn14.onclick = function () {
+btn14.onclick = () => {
     input14.value = 'Hello';
 };
 //тут не понял толи по нажатию кнопки должно меняться толи нет
 
 // task15
-let y = document.querySelector('.i-15');
+const y = document.querySelector('.i-15');
 y.style.border = '2px solid red';
 //тут не понял толи по нажатию кнопки должно меняться толи нет
 
 // task16
-let input16_1 = document.querySelector('.i-16-1');
-let input16_2 = document.querySelector('.i-16-2');
+const input16_1 = document.querySelector('.i-16-1');
+const input16_2 = document.querySelector('.i-16-2');
 const btn16 = document.querySelector('.b-16');
-let out16 = document.querySelector('.out-16');
-btn16.onclick = function () {
+const out16 = document.querySelector('.out-16');
+btn16.onclick = () => {
     out16.innerHTML = +input16_1.value + +input16_2.value;
 };
 
 // task17
-let input17 = document.querySelector('.i-17');
+const input17 = document.querySelector('.i-17');
 const btn17 = document.querySelector('.task-17');
-let out17 = document.querySelector('.out-17');
-btn17.onclick = function () {
+const out17 = document.querySelector('.out-17');
+btn17.onclick = () => {
     let t = input17.value;
     t = parseInt(t);
     out17.innerHTML = t;
 };
 // task18
-let input18 = document.querySelector('.i-18');
+const input18 = document.querySelector('.i-18');
 const btn18 = document.querySelector('.task-18');
-btn18.onclick = function () {
+btn18.onclick = () => {
     let t = input18.value;
     t = parseFloat(t);
     console.log(t);
 
 }
 // task19
-let input19_1 = document.querySelector('.i-19-1');
-let input19_2 = document.querySelector('.i-19-2');
+const input19_1 = document.querySelector('.i-19-1');
+const input19_2 = document.querySelector('.i-19-2');
 const btn19 = document.querySelector('.task-19');
-let out19 = document.querySelector('.out-19');
+const out19 = document.querySelector('.out-19');
 
-btn19.onclick = function () {
+btn19.onclick = () => {
     let t = +input19_1.value;
     t = parseInt(t);
     let y = +input19_2.value;
@@ -141,13 +141,13 @@ btn19.onclick = function () {
 //тут не понял так нужно было сделать или без parseInt просто отрицательные числа
 
 // task20
-let input20_1 = document.querySelector('.i-20-1');
-let input20_2 = document.querySelector('.i-20-2');
-let input20_3 = document.querySelector('.i-20-3');
+const input20_1 = document.querySelector('.i-20-1');
+const input20_2 = document.querySelector('.i-20-2');
+const input20_3 = document.querySelector('.i-20-3');
 const btn20 = document.querySelector('.task-20');
-let out20 = document.querySelector('.out-20');
+const out20 = document.querySelector('.out-20');
 
-btn20.onclick = function () {
+btn20.onclick = () => {
 out20.innerHTML= 'Уважаемый ' + input20_1.value +',' + input20_2.value + ',' + 'ваш возраст 33 года, попрофессии вы' + input20_3.value;
 }
 
