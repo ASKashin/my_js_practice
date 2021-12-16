@@ -72,7 +72,7 @@ const input12_2 = document.querySelector('.i-12-2');
 const btn12 = document.querySelector('.task-12');
 const out12 = document.querySelector('.out-12');
 btn12.onclick = () => {
-    out12.innerHTML ='Hello ' + input12_1.value + ' ' + input12_2.value;
+    out12.innerHTML = 'Hello ' + input12_1.value + ' ' + input12_2.value;
 
 };
 
@@ -145,10 +145,11 @@ btn19.onclick = () => {
 const input20_1 = document.querySelector('.i-20-1');
 const input20_2 = document.querySelector('.i-20-2');
 const input20_3 = document.querySelector('.i-20-3');
+const input20_4 = document.querySelector('.i-20-4');
 const btn20 = document.querySelector('.task-20');
 const out20 = document.querySelector('.out-20');
 
 btn20.onclick = () => {
-out20.innerHTML= 'Уважаемый ' + input20_1.value +',' + input20_2.value + ',' + 'ваш возраст 33 года, попрофессии вы' + input20_3.value;
+    out20.innerHTML = 'Уважаемый ' + input20_1.value + ' ' + input20_2.value + ',' + ' ваш возраст '  + input20_3.value + ' года, по попрофессии вы ' + input20_4.value;
 }
 
