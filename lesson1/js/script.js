@@ -32,15 +32,15 @@ div7.innerHTML = '<img src="https://cdn4.iconfinder.com/data/icons/food-and-drin
 //task14
 z1 = 6;
 z2 = 3;
-document.querySelector('.task14').innerHTML = z1 * z2;
+document.querySelector('.task14').innerText = z1 * z2;
 //task15
 y = 6;
 y2 = 3;
-document.querySelector('.task15').innerHTML = y / y2;
+document.querySelector('.task15').innerText = y / y2;
 //task16
 x1 = 'Hello';
 x2 = 5;
-document.querySelector('.task16').innerHTML = x1 + x2;// преобразует число x2 в строку
+document.querySelector('.task16').innerText = x1 + x2;// преобразует число x2 в строку
 //task17
 const d1 = document.querySelector('.test-1');
 console.log(d1);
