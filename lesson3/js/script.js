@@ -117,12 +117,47 @@ function f8() {
 document.querySelector('.b-8').onclick = f8;
 
 // task9
+function f9() {
+    const out9 = document.querySelector('.out-9');
+    let i9 = document.querySelector('.i-9').value;
+
+    if (i9 > 0 && i9 < 33) {
+        out9.innerText = 1;
+    }
+
+    else if (i9> 32 && i9<44){
+        out9.innerText = 2;
+    }
+    else if (i9> 43 && i9<65){
+        out9.innerText = 3;
+    }
+    else {
+        out9.innerText = 0;
+    }
+}
+
+document.querySelector('.b-9').onclick = f9;
 
 // task10
-
+function f10() {
+    const out10 = document.querySelector('.out-10');
+    out10.innerText = document.querySelector('.s-100').value;
+}
+document.querySelector('.b-10').onclick = f10;
 // task11
 
+//не очень понял что нужно сделать
+
 // task12
+function f12() {
+    const out12 = document.querySelector('.out-12');
+    let s120 = document.querySelector('.s-120').value;
+
+    out12.innerText= typeof s120;
+}
+document.querySelector('.b-12').onclick = f12;
+
+// у меня задача без решения, вроде сделал как надо, все что в вожу в input у меня это type string
 
 // task13
 
