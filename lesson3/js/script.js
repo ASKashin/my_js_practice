@@ -161,6 +161,51 @@ document.querySelector('.b-12').onclick = f12;
 
 // task13
 
+function f13() {
+    const out13 = document.querySelector('.out-13');
+    let s130 = document.querySelector('.s-130').value;
+
+    out13.innerText= typeof s130;
+}
+document.querySelector('.b-13').onclick = f13;
+
+
 // task14
 
+function f14() {
+    let i141 = document.querySelector('.i-141').value;
+    let i142 = document.querySelector('.i-142').value;
+    let s143 =document.querySelector('.s-143').value;
+    const out14 = document.querySelector('.out-14');
+    // out14.innerText = i141 s143 i142;
+// чет не пойму как тут сделать полазал в инете не нашел похожего
+}
+document.querySelector('.b-14').onclick = f14;
 // task15
+function f15() {
+    let s151 = Number(document.querySelector('.s-151').value) ;
+    let s152 = Number(document.querySelector('.s-152').value ) ;
+    let s153 =document.querySelector('.s-153').value;
+    const out15 = document.querySelector('.out-15');
+    // if (s151===1, s152===1, s153==='&&'){
+    //     out15.innerText = 1;
+    // }
+    // else if (s151===0, s152===1, s153==='&&'){
+    //     out15.innerText = 1;
+    // }
+    // else if (s151===1, s152===0,s153==='&&'){
+    //     out15.innerText = 1;
+    // }
+    // else if (s151===0, s152===0,s153==='&&'){
+    //     out15.innerText = 0;
+    // }
+    switch (s153) {
+        case "&&":
+            out15.innerHTML = s151 && s152;
+            break;
+        case "||":
+            out15.innerHTML = s151 || s152;
+    }
+//вот это честно подсмотрел и нихера не понял)))
+}
+document.querySelector('.b-15').onclick = f15;
