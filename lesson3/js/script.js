@@ -94,9 +94,27 @@ function f7() {
     out7.innerText = i71 ** i72;
 
 }
+
 document.querySelector('.b-7').onclick = f7;
 
 // task8
+function f8() {
+    const out8 = document.querySelector('.out-8');
+    let sel = document.querySelector('.s-8').value;
+    switch (sel) {
+        case '1':
+            out8.innerText = 'one';
+            break;
+        case '2':
+            out8.innerText = 'two';
+            break;
+        case '3': //почему тут именно в кавычках должно быть? типа получаем не число а строку изначально?
+            out8.innerText = 'three';
+            break;
+    }
+}
+
+document.querySelector('.b-8').onclick = f8;
 
 // task9
 
@@ -111,13 +129,3 @@ document.querySelector('.b-7').onclick = f7;
 // task14
 
 // task15
-
-// task16
-
-// task17
-
-// task18
-
-// task19
-
-// task20
