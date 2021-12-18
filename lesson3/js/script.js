@@ -62,20 +62,39 @@ function f5() {
     let i5 = document.querySelector('.i-5').value;
     const out5 = document.querySelector('.out-5');
 
-    if (i5 < 0){
+    if (i5 < 0) {
         out5.innerText = 'm';
-    }
-    else if (i5==0){ // почему здесь если ставлю === не работает
+    } else if (i5 == 0) { // почему здесь если ставлю === не работает
         out5.innerText = 0;
-    }
-    else {
+    } else {
         out5.innerText = 1;
     }
 }
+
 document.querySelector('.b-5').onclick = f5;
+
 // task6
+function f6() {
+    let i6 = document.querySelector('.i-6').value;
+    const out6 = document.querySelector('.out-6');
+    if (i6 % 2 == 0) {
+        out6.innerText = 'even';
+    } else {
+        out6.innerText = 'odd';
+    }
+}
+
+document.querySelector('.b-6').onclick = f6;
 
 // task7
+function f7() {
+    let i71 = document.querySelector('.i-71').value;
+    let i72 = document.querySelector('.i-72').value;
+    const out7 = document.querySelector('.out-7');
+    out7.innerText = i71 ** i72;
+
+}
+document.querySelector('.b-7').onclick = f7;
 
 // task8
 
