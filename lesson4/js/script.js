@@ -60,8 +60,8 @@ const out8 = document.querySelector('.out-8');
 const out81 = document.querySelector('.out-81');
 
 document.querySelector('.b-8').onclick = () => {
-    out8.innerHTML = '<input class = i-81>';
-    out8.innerHTML += '<button class = b-81>btn81</button>';
+    out8.innerHTML = '<input class = "i-81">';
+    out8.innerHTML += '<button class = "b-81">btn81</button>';
 
     function f81() {
         out81.innerText = document.querySelector('.i-81').value;
@@ -130,7 +130,7 @@ document.querySelector('.b-15').onclick = () => {
     const t15 = document.querySelector('.t-15');
     // тут пытался изначатьно получить значание и потом думал его подменить но не прокатило))
     const i15 = document.querySelector('.i-15').value;
-    t15.innerText = i15;
+    t15.value = i15;
     out15.innerText = i15;
 
 };
@@ -176,6 +176,8 @@ document.querySelector('.b-20').onclick = (event) => {
     event.preventDefault();// тут типа я так понял изи за того что кнопка в форме то нужно для прописать чтобы форма не обновлялась
     const form = document.querySelector('.f-20');//получил форму
     // console.log(form)
-    out20.innerText = form.elements.username.value +' '+form.elements.password.value ;
+    out20.innerText = form.elements.username.value + ' ' + form.elements.password.value;
+
+
     //можно ли по классу обращаться к элементу формы или только по ID и name?
 };
