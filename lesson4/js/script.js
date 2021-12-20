@@ -62,9 +62,11 @@ const out81 = document.querySelector('.out-81');
 document.querySelector('.b-8').onclick = () => {
     out8.innerHTML = '<input class = i-81>';
     out8.innerHTML += '<button class = b-81>btn81</button>';
-    function f81 () {
-      out81.innerText = document.querySelector('.i-81').value;
+
+    function f81() {
+        out81.innerText = document.querySelector('.i-81').value;
     }
+
     document.querySelector('.b-81').onclick = f81;
     // вроде ниче сложного но поебаться пришлось прям норм с вчитыванием в задание)
 }
@@ -81,24 +83,93 @@ document.querySelector('.b-9').onclick = () => {
 };
 
 // тут по аналогии с checkbox
+
+
 //Task10
 
+const out10 = document.querySelector('.out-10');
+document.querySelector('.b-10').onclick = () => {
+    out10.style.background = document.querySelector('.i-10').value;
+
+};
+
 //Task11
+document.querySelector('.b-11').onclick = () => {
+    // console.log(document.querySelector('.i-111').value);
+    // console.log(document.querySelector('.i-112').value);
+    document.querySelector('.i-112').value = document.querySelector('.i-111').value;
+
+}
 
 //Task12
 
+const out12 = document.querySelector('.out-12');
+document.querySelector('.b-12').onclick = () => {
+    // console.log(document.querySelector('.i-12').value);
+    out12.innerText = document.querySelector('.i-12').value;
+
+};
+
 //Task13
+const out13 = document.querySelector('.out-13');
+document.querySelector('.i-13').oninput = () => {
+    out13.innerText = document.querySelector('.i-13').value;
+};
+
 
 //Task14
+const out14 = document.querySelector('.out-14');
+document.querySelector('.b-14').onclick = () => {
+    out14.innerText = document.querySelector('.t-14').value;
+};
+
 
 //Task15
+const out15 = document.querySelector('.out-15');
+document.querySelector('.b-15').onclick = () => {
+    const t15 = document.querySelector('.t-15');
+    // тут пытался изначатьно получить значание и потом думал его подменить но не прокатило))
+    const i15 = document.querySelector('.i-15').value;
+    t15.innerText = i15;
+    out15.innerText = i15;
+
+};
 
 //Task16
+const out16 = document.querySelector('.out-16');
+document.querySelector('.b-16').onclick = () => {
+    out16.innerText = document.querySelector('.s-16').value;
+}
+;
 
 //Task17
+const out17 = document.querySelector('.out-17');
+
+function f17() {
+    out17.innerText = document.querySelector('.s-17').value;
+}
+
+document.querySelector('.s-17').onchange = f17;
+
 
 //Task18
+function f18() {
+    document.querySelector('.i-18').value = document.querySelector('.s-18').value;
+// думал что innerText нужен для инпута, но как видно ошибся, над тем где какие значения еще нужнго поработать
+}
+
+document.querySelector('.s-18').onchange = f18;
 
 //Task19
+const out19 = document.querySelector('.out-19');
+document.querySelector('.b-19').onclick = () => {
+    const i191 = document.querySelector('.i-191').value;
+    const i192 = document.querySelector('.i-192').value;
+    // console.log(i191);
+    // console.log(i192);
+    out19.innerText = i191 + i192;
+};
 
 //Task20
+
+
