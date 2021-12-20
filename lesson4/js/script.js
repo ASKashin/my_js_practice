@@ -167,9 +167,15 @@ document.querySelector('.b-19').onclick = () => {
     const i192 = document.querySelector('.i-192').value;
     // console.log(i191);
     // console.log(i192);
-    out19.innerText = i191 + i192;
+    out19.innerText = i191 + ' ' + i192;
 };
 
 //Task20
-
-
+const out20 = document.querySelector('.out-20');
+document.querySelector('.b-20').onclick = (event) => {
+    event.preventDefault();// тут типа я так понял изи за того что кнопка в форме то нужно для прописать чтобы форма не обновлялась
+    const form = document.querySelector('.f-20');//получил форму
+    // console.log(form)
+    out20.innerText = form.elements.username.value +' '+form.elements.password.value ;
+    //можно ли по классу обращаться к элементу формы или только по ID и name?
+};
