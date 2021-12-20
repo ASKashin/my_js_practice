@@ -108,7 +108,7 @@ function f8() {
         case '2':
             out8.innerText = 'two';
             break;
-        case '3': //почему тут именно в кавычках должно быть? типа получаем не число а строку изначально?
+        case '3':
             out8.innerText = 'three';
             break;
     }
@@ -145,8 +145,12 @@ function f10() {
 }
 document.querySelector('.b-10').onclick = f10;
 // task11
-
-//не очень понял что нужно сделать
+const sel11 = document.querySelector('.s-110');
+function f11 () {
+    const out11 = document.querySelector('.out11');
+    out11.innerText = sel11.value;
+}
+sel11.onchahge =f11;
 
 // task12
 function f12() {
