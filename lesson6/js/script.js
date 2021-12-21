@@ -59,7 +59,7 @@ document.querySelector('.b-4').onclick = t4;
 
 const t5 = () =>{
     let out5 = '';
-    for (i = 1; i <= 3; i++){
+    for (i = 0; i < 3; i++){
 
         for(k = 0; k <6; k++){
             if(k % 2 ===0){  //тут я даже немного погуглил не сразу дошло прям что можно так сделать
@@ -78,7 +78,7 @@ document.querySelector('.b-5').onclick = t5;
 
 const t6 = () =>{
     let out6 = '';
-    for (i = 1; i <= 3; i++){
+    for (i = 0; i < 3; i++){
 
         for(k = 0; k <6; k++){ // эта задача просто сломала мне мозг, пытаюсь так же делением проверить но нихера не выходит
             if(k % 2 ===0){
@@ -97,14 +97,11 @@ document.querySelector('.b-6').onclick = t6;
 
 const t7 = () =>{
     let out7 = '';
-    for (i = 1; i <= 3; i++){
+    for (i = 0; i <= 4; i++){
 
-        for(k = 0; k <6; k++){
-            if(k % 2 ===0){
-                out67+= 1}
-            else {
-                out7 += 0
-            }
+        for(k = 0; k < i; k++){
+                out7+= '*';
+
         }
         out7 +="<br>";
     }
@@ -114,6 +111,50 @@ document.querySelector('.b-7').onclick = t7;
 
 // Task8
 
+const t8 = () =>{
+    let out8 = '';
+    for (i = 5; i >= 0; i--){
+
+        for(k = 0; k < i; k++){
+            out8+= '*';
+
+        }
+        out8 +="<br>";
+    }
+    document.querySelector('.out-8').innerHTML = out8;
+}
+document.querySelector('.b-8').onclick = t8;
+
 // Task9
 
+const t9 = () =>{
+    let out9 = '';
+    for (i = 1; i < 6; i++){
+
+        for(k = 1; k <= i; k++){
+            out9+= `${k} `;
+
+        }
+        out9 +="<br>";
+    }
+    document.querySelector('.out-9').innerHTML = out9;
+}
+document.querySelector('.b-9').onclick = t9;
+
 // Task10
+
+const t10 = () =>{
+    let out10 = '';
+    for (i = 0; i < 6; i++){
+
+        for(k = 0; k <=9; k++){
+            if (k<10){
+                out10 += `0${k}`;
+            }
+// тут чет ваще ерь какая то у меня получается, может я просто в голове не могу представить как это
+        }
+        out10 +="<br>";
+    }
+    document.querySelector('.out-10').innerHTML = out10;
+}
+document.querySelector('.b-10').onclick = t10;
