@@ -136,7 +136,7 @@ const t11 = () => {
         // console.log(elem[i].value); // получаю каждый див
         out11 += `${elem[i].innerText} `; //вот тут пока дошло что нужно innerText думал сломаю мозг)))надеюсь правильно
     }
-    document.querySelector('.out-11').innerText = out11;
+    document.querySelector('.out-11').innerHTML = out11;
 }
 document.querySelector('.b-11').onclick = t11;
 
@@ -156,15 +156,14 @@ document.querySelector('.b-12').onclick = t12;
 
 const t13 = () => {
     const elem = document.querySelectorAll('.i-13')
-    let out13 = "";
+
     for (let i = 0; i < elem.length; i++) {
-        out13 += elem[i].value;
+        elem[i].value = i + 1;
     }
-    document.querySelector('.out-13').innerText = out13;
 }
 document.querySelector('.b-13').onclick = t13;
 
-//ваще не понял что нужно сделать
+
 
 //Task14
 
@@ -172,7 +171,7 @@ const t14 = () => {
     const elem = document.querySelectorAll('.i-14')
     let out14 = "";
     for (let i = 0; i < elem.length; i++) {
-        if (elem[i].checked){
+        if (elem[i].checked) {
             out14 = elem[i].value;
         }
     }
@@ -183,4 +182,13 @@ document.querySelector('.b-14').onclick = t14;
 
 //Task15
 
-//ваще чет даже мыслей нт как сделать
+const t15 = () => {
+    const elem = document.querySelectorAll('.i-15')
+    let out15 = "";
+    for (let i = 0; i <=10; i++) {
+            out15 += `${10 -i} ${i} `;
+
+    }
+    document.querySelector('.out-15').innerText = out15;
+}
+document.querySelector('.b-15').onclick = t15;
