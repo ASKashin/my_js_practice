@@ -183,7 +183,6 @@ document.querySelector('.b-14').onclick = t14;
 //Task15
 
 const t15 = () => {
-    const elem = document.querySelectorAll('.i-15')
     let out15 = "";
     for (let i = 0; i <=10; i++) {
             out15 += `${10 -i} ${i} `;
