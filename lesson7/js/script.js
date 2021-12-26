@@ -111,29 +111,20 @@ document.querySelector('.b-8').onclick = function () {
 //Task9
 
 function t9(a) {
-    if (a % 2 === 0) {
-        return "true";
-    } else {
-        return "false";
-    }
-
+    return a % 2 === 0
 }
 
-document.querySelector('.b-9').onclick = function () {
+t9(2);
 
-    document.querySelector('.out-9').innerText = t9(2);
-}
 
 //Task10
 
 function t10(a, b) {
     if (a > b) {
         return a;
-    } else {
+    }
         return b;
     }
-
-}
 
 document.querySelector('.b-10').onclick = function () {
 
