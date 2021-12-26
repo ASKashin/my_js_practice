@@ -1,10 +1,10 @@
 //Task1
 const t1 = () => {
     let out1 = "";
-    let i = 0;
+    let i = 1;
     while (i < 50) {
-        i++;
         out1 += `${i} `;
+        i++;
     }
 
     document.querySelector('.out-1').innerText = out1;
@@ -16,7 +16,7 @@ document.querySelector('.b-1').onclick = t1;
 const t2 = () => {
     let out2 = "";
     let i = 2;
-    while (i < 122) {
+    while (i <= 122) {
         out2 += `${i} `;
         i = i + 2;
     }
