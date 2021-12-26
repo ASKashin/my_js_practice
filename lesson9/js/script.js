@@ -111,7 +111,7 @@ function f10() {
 //Task11
 
 function f11() {
-    let div11 = document.createElement('div');
+    const div11 = document.createElement('div');
     div11.innerText = '25';
     document.querySelector('.out-11').append(div11);
 }
@@ -121,7 +121,7 @@ document.querySelector('.b-11').onclick = f11;
 //Task12
 
 function f12() {
-    let div12 = document.createElement('div');
+    const div12 = document.createElement('div');
     div12.innerText = '12';
     div12.classList.add('bg-12');
     document.querySelector('.out-12').append(div12);
@@ -134,7 +134,7 @@ document.querySelector('.b-12').onclick = f12;
 // const out13 = document.querySelector('.out-13');
 function f13() {
 
-    let div13 = document.createElement('div');
+    const div13 = document.createElement('div');
     div13.innerText = 'pushMe';
     div13.classList.add('bg-13');
     document.querySelector('.out-13').append(div13);
@@ -153,7 +153,7 @@ document.querySelector('.b-13').onclick = f13;
 //Task14
 
 function f14() {
-    let div14 = document.createElement('div');
+    const div14 = document.createElement('div');
     div14.innerText = '14';
     div14.classList.add('bg-14');
     document.querySelector('.out-14').prepend(div14);
@@ -165,7 +165,7 @@ document.querySelector('.b-14').onclick = f14;
 //Task15
 
 function f15() {
-    let div15 = document.createElement('div');
+    const div15 = document.createElement('div');
     div15.innerText = '15';
     div15.classList.add('bg-15');
     document.querySelector('.out-15').before(div15);
@@ -177,7 +177,7 @@ document.querySelector('.b-15').onclick = f15;
 //Task16
 
 function f16() {
-    let div16 = document.createElement('div');
+    const div16 = document.createElement('div');
     div16.innerText = '16';
     div16.classList.add('bg-16');
     document.querySelector('.out-16').after(div16);
@@ -189,7 +189,7 @@ document.querySelector('.b-16').onclick = f16;
 //Task17
 
 function f17() {
-    let div17 = document.createElement('div');
+    const div17 = document.createElement('div');
     div17.innerText = '17';
     div17.classList.add('bg-17');
     document.querySelector('.out-17').replaceWith(div17);
