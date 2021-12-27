@@ -146,10 +146,7 @@ const f9 = () => {
 document.querySelector('.b-9').onclick = f9;
 
 // Task 10
-// Выведите сумму первого (индекс 1) и последнего массива ar10 в блок out-10. Индекс последнего элемента массива не указывайте напрямую, а вычисляйте через длину массива.
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-10
-// Вывод в out-10
+
 
 const array10 = [100, 200, 300, 400, 700, 121];
 
@@ -202,13 +199,6 @@ const f12 = () => {
 document.querySelector('.b-12').onclick = f12;
 
 // Task 13
-// Выведите массив ar13 в out-13 в формате индекс пробел значение пробел.
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-13
-// Вывод в out-13
-// Тест допустим массив [1,2,3] вывод:
-//  0 1 1 2 2 3
-
 
 const array13 = ['test', 'west', 'list', 'class', 'best'];
 
@@ -265,78 +255,99 @@ document.querySelector('.b-15').onclick = f15;
 // Вывод в out-16
 
 const array16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
-const ar16_odd = [];
-const ar16_even = [];
+let array16_odd = [];
+let array16_even = [];
 
 const f16 = () => {
 
+    for (let i = 0; i < array16.length; i++) {
+        if (array16[i] % 2 === 0) {
+            array16_even.push(array16[i]) ;
+        }
+        else {
+            array16_odd.push(array16[i]);
+            // тут тоже сначало добавлялось как просто элементы в переменную и не были массивом использовал push
+        }
+    }
+    console.log(array16);
+    console.log(array16_even);
+    console.log(array16_odd);
+    document.querySelector('.out-16-even').innerText = array16_even;
+    document.querySelector('.out-16-odd').innerText = array16_odd;
+// тут так и не разобрался как по индексу
 }
 
 document.querySelector('.b-16').onclick = f16;
 
 
-
-
-
-
-
-
-
-
 // Task 17
 // Используя цикл выведите в .out-17 количество элементов ar17, значение которых больше 3. Для расчета используйте цикл и переменную счетчик.
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-17
-// Вывод в out-17
 
-let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
-function f17() {
+const array17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
+const f17 = () => {
+
+    let out = '';
+    for (let i = 0; i < array17.length; i++) {
+        if (array17[i] > 3) {
+            out += `${array17[i]} `;
+        }
+    }
+    console.log(out);
+    // document.querySelector('.out-17').innerText = out; //6,9
+    document.querySelector('.out-17').innerText = out.length;// 4 и это не правильно
+
+    //тут чет затрудняюсь out получается уже не массив
 }
 
 document.querySelector('.b-17').onclick = f17;
 
 
 // Task 18
-// Используя цикл выведите в .out-18 максимальный элемент массива ar18.
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-18
-// Вывод в out-18
 
-let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
+const array18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
-function f18() {
-
+const f18 = () => {
+    let max = array18[0];
+    for (let i = 0; i < array18.length; i++) {
+        if (array18[i] > max) {
+            max = array18[i];
+        }
+    }
+    document.querySelector('.out-18').innerText = max;
 }
 
 document.querySelector('.b-18').onclick = f18;
 
 
 // Task 19
-// Выведите в .out-19 индекс минимального элемента в массиве ar19
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-19
-// Вывод в out-19
 
-let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
+const array19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
-function f19() {
-
+const f19 = () => {
+    let min = array19[0];
+    for (let i = 0; i < array19.length; i++) {
+        if (array19[i] < min) {
+            min = array19[i];
+        }
+    }
+    document.querySelector('.out-19').innerText = array19.indexOf(min);
+    //тут пришлось погуглить разное почему то по разному на разных сайтах это делается, выбрал
 }
 
 document.querySelector('.b-19').onclick = f19;
 
 // Task 20
-// Выведите в .out-20 сумму элементов в массиве ar20
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-20
-// Вывод в out-20
 
-let ar20 = [4, 5, 6, 7, 8, 9, 10];
+const array20 = [4, 5, 6, 7, 8, 9, 10];
 
-function f20() {
-
+const f20 = () => {
+    let sum = 0;
+    for (let i = 0; i < array20.length; i++) {
+        sum = sum + array20[i];
+    }
+    document.querySelector('.out-20').innerText = sum;
 }
 
 document.querySelector('.b-20').onclick = f20;
