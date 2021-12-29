@@ -169,7 +169,7 @@ let d10 = [3, 14, 15, 92, 6];
 
 const f10 = () => {
 
-    d10 = d10.reverse();
+    d10.reverse();
 
     showArr('.out-10', d10);
 }
@@ -210,11 +210,11 @@ const f12 = () => {
     for (let i = 0; i < d12.length; i++) {
         if (d12[i] === i12) {
             document.querySelector('.out-12').innerText = i;
+            break;
+        } else {
+            document.querySelector('.out-12').innerText = -1;
         }
-        // else {
-        //     document.querySelector('.out-12').innerText = -1;
-        // }
-        //не могу сообразить как  тут сделать else чтобы оно не работало каждый круг
+
     }
 
 }
@@ -231,27 +231,34 @@ document.querySelector('.b-12').onclick = f12;
 let d13 = [6, 0, 22, 1, 4, 76];
 
 const f13 = () => {
-
-    for (let i = d13.length-1; i>= 0; i--){
-        console.log() d13[i];
-
+    const arr = [];
+    for (let i = d13.length - 1; i >= 0; i--) {
+        arr.push(d13[i])
     }
 
-    showArr('.out-13', d13);
+    showArr('.out-13', arr);
 }
 
 document.querySelector('.b-13').onclick = f13;
 
 
 // Task 14
-// Напишите функцию, которая получает i-14, переводит в число, а потом заполняет массив d14 так, что количество элементов равно введенному числу, и каждый элемент равен 1. Т.е. пользователь ввел 5, массив будет [1,1,1,1,1]. Выведите массив в out-14.
+// Напишите функцию, которая получает i-14, переводит в число, а потом заполняет массив d14 так,
+// что количество элементов равно введенному числу, и каждый элемент равен 1. Т.е. пользователь ввел 5, массив будет [1,1,1,1,1]. Выведите массив в out-14.
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-14
 // Вывод в out-14
 
-let d14 = [];
+const d14 = [];
 
-function f14() {
+const f14 = () => {
+
+    const i14 = Number(document.querySelector('.i-14').value);
+
+    for (let i = 0; i < i14; i++) {
+        d14.push(1);
+        console.log(d14);
+    }
 
     showArr('.out-14', d14);
 }
@@ -264,10 +271,16 @@ document.querySelector('.b-14').onclick = f14;
 // Вывод - по нажатию кнопки b-15
 // Вывод в out-15
 
-let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+const d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
-function f15() {
+const f15 = () => {
 
+    const i15 = Number(document.querySelector('.i-15').value);
+
+    if (d15.indexOf(i15) === -1) {
+        d15.push(i15);
+    }
+    // тут сразу зачем то хотел перебрать циклом , запутался и вспомнил про indexOf
 
     showArr('.out-15', d15);
 }
@@ -281,10 +294,12 @@ document.querySelector('.b-15').onclick = f15;
 // Вывод в out-16
 
 let d16 = [];
-let d161 = [5, 6, 7, 8, 9];
-let d162 = [23, 24, 56, 87];
+const d161 = [5, 6, 7, 8, 9];
+const d162 = [23, 24, 56, 87];
 
-function f16() {
+const f16 = () => {
+
+    d16 = d161.concat(d162); //возвращает новый массив объединяя массив на коротом был вызван с массивом в скобках
 
     showArr('.out-16', d16);
 }
@@ -297,12 +312,19 @@ document.querySelector('.b-16').onclick = f16;
 // Вывод - по нажатию кнопки b-17
 // Вывод в out-17
 
-let d17 = [];
-let d171 = ['a', 'b', 'c', 'd'];
-let d172 = [1, 2, 3, 4, 5];
+const d17 = [];
+const d171 = ['a', 'b', 'c', 'd'];
+const d172 = [1, 2, 3, 4, 5];
 
-function f17() {
+const f17 = () => {
 
+    for (let i = 0; i < d171.length; i++) {
+        d17.push(d171[i]);
+    }
+    for (let i = 0; i < d172.length; i++) {
+        d17.push(d172[i]);
+    }
+    // console.log(d17);
     showArr('.out-17', d17);
 }
 
@@ -310,14 +332,18 @@ document.querySelector('.b-17').onclick = f17;
 
 
 // Task 18
-// Напишите функцию f18, которая получает значение из i-18 и проверяет есть ли такое значение в массиве d18 c использованием метода include. Результат применения метода - выводится в .out-18.
+// Напишите функцию f18, которая получает значение из i-18 и проверяет есть ли такое значение в массиве d18 c использованием метода include.
+// Результат применения метода - выводится в .out-18.
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-18
 // Вывод в out-18
 
-let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
+const d18 = ['b', 'c', '45', 'e', 'z', 'y'];
 
-function f18() {
+const f18 = () => {
+    const i18 = document.querySelector('.i-18').value;
+
+    document.querySelector('.out-18').innerText = d18.includes(i18);
 
 }
 
@@ -330,25 +356,33 @@ document.querySelector('.b-18').onclick = f18;
 // Вывод - по нажатию кнопки b-19
 // Вывод в out-19
 
-let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged', 'in', 'advance', 'every'];
+const d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged', 'in', 'advance', 'every'];
 let maxString = '';
 
-function f19() {
 
+const f19 = () => {
+    for (let i = 0; i < d19.length; i++) {
+        if (d19[i].length > maxString.length) {
+            maxString = d19[i];
+        }
+    }
+    document.querySelector('.out-19').innerHTML = maxString;// тут еще раз бы хотелось поговорить о том в каком случае innerHTML,сразу поставил innerTExt и не мог понять почему не работает
 }
 
 document.querySelector('.b-19').onclick = f19;
 
 // Task 20
-// Напишите функцию f20, которая применяет к массиву d20 метод join с параметрами и соединяет элементы массива в одну строку. Результат выводит в .out-20. Укажите мето так d20.join(''). Обратите внимание  - между апострофами нет пробела!!!.
+// Напишите функцию f20, которая применяет к массиву d20 метод join с параметрами и соединяет элементы массива в одну строку.
+// Результат выводит в .out-20. Укажите мето так d20.join(''). Обратите внимание  - между апострофами нет пробела!!!.
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-20
 // Вывод в out-20
 
-let d20 = [4, 5, 6, 7, 8, 9, 10];
+const d20 = [4, 5, 6, 7, 8, 9, 10];
 
-function f20() {
-
+const f20 = () => {
+    document.querySelector('.out-20').innerText = d20.join();//объединяет все элементы массива  в строку.
+    console.log(d20.join());
 }
 
 document.querySelector('.b-20').onclick = f20;
