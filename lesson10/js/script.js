@@ -102,151 +102,132 @@ document.querySelector('.b-7').onclick = f7;
 
 const array8 = [];
 
-// const f8 = () => {
-//     array7[3] = 3.14;
-//     array7[4] = 17;
-//     array7[6] = 5;
-//     let out = '';
-//     for (let i = 0; i < array8.length; i++){
-//         out += `${array8[i]} `;
-//     }
-//     document.querySelector('.out-8').innerText = out;
-//     document.querySelector('.out-8_1').innerText = array8.length;
-//
-// } вот это не прокатило как я по своей логике думал))
-
 const f8 = () => {
-
-    array8.splice(3, 0, 3.14, 17, 5);// п элементы должны были добавиться начиная с 3 индекса как я понял из документашки
-    // тут я начал гуглить и все равно ничего не понял , думал что 0,1,2 элементы добавятся как пустые и они войдут в длинну массива, но чет пошо не по плану
-    // array7[3] = 3.14;
-    // array7[4] = 17;
-    // array7[6] = 5;
+    array8[3] = 3.14;
+    array8[4] = 17;
+    array8[6] = 5;
     let out = '';
     for (let i = 0; i < array8.length; i++) {
-        out += `${array8[i]} `;
+        out += `${array8[i]} -`;
     }
     document.querySelector('.out-8').innerText = out;
     document.querySelector('.out-8_1').innerText = array8.length;
-}
+ }
 
-// и видимо я что то не допонял потому что при повторном нажатии кнопки добавляются еще раз эти элементы
-document.querySelector('.b-8').onclick = f8;
-// не мправился с этим заданием
 
 // Task 9
 
 
-const array9 = [100, 200, 300, 400, 700, 121];
+    const array9 = [100, 200, 300, 400, 700, 121];
 
-const f9 = () => {
-    document.querySelector('.out-9').innerText = array9 [array9.length - 1];
-}
+    const f9 = () => {
+        document.querySelector('.out-9').innerText = array9 [array9.length - 1];
+    }
 
-document.querySelector('.b-9').onclick = f9;
+    document.querySelector('.b-9').onclick = f9;
 
 // Task 10
 
 
-const array10 = [100, 200, 300, 400, 700, 121];
+    const array10 = [100, 200, 300, 400, 700, 121];
 
-const f10 = () => {
+    const f10 = () => {
 
-    // document.querySelector('.out-10').innerText = `${array10[1]} + ${array10 [array10.length - 1]}`; // не очень понял почему так не прокатило и вывелось просто как строка , тоже видимо до конца не допонял
-    document.querySelector('.out-10').innerText = `${array10[1] + array10 [array10.length - 1]}`;
-}
+        // document.querySelector('.out-10').innerText = `${array10[1]} + ${array10 [array10.length - 1]}`; // не очень понял почему так не прокатило и вывелось просто как строка , тоже видимо до конца не допонял
+        document.querySelector('.out-10').innerText = `${array10[1] + array10 [array10.length - 1]}`;
+    }
 
-document.querySelector('.b-10').onclick = f10;
+    document.querySelector('.b-10').onclick = f10;
 
 
 // Task 11
 
-const array11 = [2, 3, 4, 5, 6, 7];
+    const array11 = [2, 3, 4, 5, 6, 7];
 
-const f11 = () => {
+    const f11 = () => {
 
-    const a = array11[2];
-    array11[2] = array11[4];
-    array11[4] = a;
-    let out = '';
-    for (let i = 0; i < array11.length; i++) {
-        out += `${array11[i]} `;
+        const a = array11[2];
+        array11[2] = array11[4];
+        array11[4] = a;
+        let out = '';
+        for (let i = 0; i < array11.length; i++) {
+            out += `${array11[i]} `;
+        }
+        document.querySelector('.out-11').innerText = out;
     }
-    document.querySelector('.out-11').innerText = out;
-}
 
-document.querySelector('.b-11').onclick = f11;
+    document.querySelector('.b-11').onclick = f11;
 
 
 // Task 12
 // Напишите функцию f12, которая меняет местами нулевой и последний элемент массива ar12 и выводит его в out-12. Разделитель - пробел. Последний элемент вычислять через длину массива.
 
 
-const array12 = ['test', 'west', 'list', 'class', 'best'];
+    const array12 = ['test', 'west', 'list', 'class', 'best'];
 
-const f12 = () => {
+    const f12 = () => {
 
-    const a = array12[0];
-    array12[0] = array12[array12.length - 1];
-    array12[array12.length - 1] = a;
-    let out = '';
-    for (let i = 0; i < array12.length; i++) {
-        out += `${array12[i]} `;
+        const a = array12[0];
+        array12[0] = array12[array12.length - 1];
+        array12[array12.length - 1] = a;
+        let out = '';
+        for (let i = 0; i < array12.length; i++) {
+            out += `${array12[i]} `;
+        }
+        document.querySelector('.out-12').innerText = out;
     }
-    document.querySelector('.out-12').innerText = out;
-}
 
-document.querySelector('.b-12').onclick = f12;
+    document.querySelector('.b-12').onclick = f12;
 
 // Task 13
 
-const array13 = ['test', 'west', 'list', 'class', 'best'];
+    const array13 = ['test', 'west', 'list', 'class', 'best'];
 
-const f13 = () => {
+    const f13 = () => {
 
-    let out = '';
-    for (let i = 0; i < array13.length; i++) {
+        let out = '';
+        for (let i = 0; i < array13.length; i++) {
 
-        out += `${i} ${array13[i]} `
+            out += `${i} ${array13[i]} `
+        }
+
+        document.querySelector('.out-13').innerText = out;
     }
 
-    document.querySelector('.out-13').innerText = out;
-}
-
-document.querySelector('.b-13').onclick = f13;
+    document.querySelector('.b-13').onclick = f13;
 
 
 // Task 14
 
-const array14 = [1, 2, 3, 'hello', 66];
+    const array14 = [1, 2, 3, 'hello', 66];
 
-const f14 = () => {
+    const f14 = () => {
 
-    let out = '';
-    for (let i = array14.length - 1; i >= 0; i--) { // не сразу добавил -1 и получал undefined
-        out += `${array14[i]} `;
+        let out = '';
+        for (let i = array14.length - 1; i >= 0; i--) { // не сразу добавил -1 и получал undefined
+            out += `${array14[i]} `;
+        }
+        document.querySelector('.out-14').innerText = out;
     }
-    document.querySelector('.out-14').innerText = out;
-}
 
-document.querySelector('.b-14').onclick = f14;
+    document.querySelector('.b-14').onclick = f14;
 
 // Task 15
 
-const array15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+    const array15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
-const f15 = () => {
+    const f15 = () => {
 
-    let out = '';
-    for (let i = 0; i < array15.length; i++) {
-        if (array15[i] > 0) {
-            out += `${array15[i]} `;
+        let out = '';
+        for (let i = 0; i < array15.length; i++) {
+            if (array15[i] > 0) {
+                out += `${array15[i]} `;
+            }
         }
+        document.querySelector('.out-15').innerText = out;
     }
-    document.querySelector('.out-15').innerText = out;
-}
 
-document.querySelector('.b-15').onclick = f15;
+    document.querySelector('.b-15').onclick = f15;
 
 // Task 16
 // Выполните перебор массива arr16. Четные элементы добавьте в массив ar16_even, нечетные в ar16_odd. Добавление в массив - по индексу, а не +=!!!!!. Протестируйте задачу на повторный запуск! Выведите ar16_odd в div.out-16-odd, а ar16_even в div.out-16-even. Разделитель - пробел.
@@ -254,100 +235,100 @@ document.querySelector('.b-15').onclick = f15;
 // Вывод - по нажатию кнопки b-16
 // Вывод в out-16
 
-const array16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
-let array16_odd = [];
-let array16_even = [];
+    const array16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+    let array16_odd = [];
+    let array16_even = [];
 
-const f16 = () => {
+    const f16 = () => {
 
-    for (let i = 0; i < array16.length; i++) {
-        if (array16[i] % 2 === 0) {
-            array16_even.push(array16[i]) ;
+        for (let i = 0; i < array16.length; i++) {
+            const item = array16[i];
+            if (item % 2 === 0) {
+                array16_even[array16_even.length] = item;
+            } else {
+                array16_odd[array16_odd.length] = item;
+
+            }
         }
-        else {
-            array16_odd.push(array16[i]);
-            // тут тоже сначало добавлялось как просто элементы в переменную и не были массивом использовал push
-        }
-    }
-    console.log(array16);
-    console.log(array16_even);
-    console.log(array16_odd);
-    document.querySelector('.out-16-even').innerText = array16_even;
-    document.querySelector('.out-16-odd').innerText = array16_odd;
+        console.log(array16);
+        console.log(array16_even);
+        console.log(array16_odd);
+        document.querySelector('.out-16-even').innerText = array16_even;
+        document.querySelector('.out-16-odd').innerText = array16_odd;
 // тут так и не разобрался как по индексу
-}
+    }
 
-document.querySelector('.b-16').onclick = f16;
+    document.querySelector('.b-16').onclick = f16;
 
 
 // Task 17
 // Используя цикл выведите в .out-17 количество элементов ar17, значение которых больше 3. Для расчета используйте цикл и переменную счетчик.
 
 
-const array17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
+    const array17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
-const f17 = () => {
+    const f17 = () => {
 
-    let out = '';
-    for (let i = 0; i < array17.length; i++) {
-        if (array17[i] > 3) {
-            out += `${array17[i]} `;
+        let out = 0;
+        for (let i = 0; i < array17.length; i++) {
+            if (array17[i] > 3) {
+                out++;
+            }
         }
+        console.log(out);
+
+        document.querySelector('.out-17').innerText = out;
+
+
     }
-    console.log(out);
-    // document.querySelector('.out-17').innerText = out; //6,9
-    document.querySelector('.out-17').innerText = out.length;// 4 и это не правильно
 
-    //тут чет затрудняюсь out получается уже не массив
-}
-
-document.querySelector('.b-17').onclick = f17;
+    document.querySelector('.b-17').onclick = f17;
 
 
 // Task 18
 
-const array18 = [15, 24, 13, 78, 21, 4, 45, 67];
+    const array18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
-const f18 = () => {
-    let max = array18[0];
-    for (let i = 0; i < array18.length; i++) {
-        if (array18[i] > max) {
-            max = array18[i];
+    const f18 = () => {
+        let max = array18[0];
+        for (let i = 0; i < array18.length; i++) {
+            if (array18[i] > max) {
+                max = array18[i];
+            }
         }
+        document.querySelector('.out-18').innerText = max;
     }
-    document.querySelector('.out-18').innerText = max;
-}
 
-document.querySelector('.b-18').onclick = f18;
+    document.querySelector('.b-18').onclick = f18;
 
 
 // Task 19
 
-const array19 = [15, 424, 313, 78, 241, 4, 45, 67];
+    const array19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
-const f19 = () => {
-    let min = array19[0];
-    for (let i = 0; i < array19.length; i++) {
-        if (array19[i] < min) {
-            min = array19[i];
+    const f19 = () => {
+        let min = array19[0];
+        for (let i = 0; i < array19.length; i++) {
+            if (array19[i] < min) {
+                min = array19[i];
+            }
         }
+        document.querySelector('.out-19').innerText = array19.indexOf(min);
+        //тут пришлось погуглить разное почему то по разному на разных сайтах это делается, выбрал
     }
-    document.querySelector('.out-19').innerText = array19.indexOf(min);
-    //тут пришлось погуглить разное почему то по разному на разных сайтах это делается, выбрал
-}
 
-document.querySelector('.b-19').onclick = f19;
+    document.querySelector('.b-19').onclick = f19;
 
 // Task 20
 
-const array20 = [4, 5, 6, 7, 8, 9, 10];
+    const array20 = [4, 5, 6, 7, 8, 9, 10];
 
-const f20 = () => {
-    let sum = 0;
-    for (let i = 0; i < array20.length; i++) {
-        sum = sum + array20[i];
+    const f20 = () => {
+        let sum = 0;
+        for (let i = 0; i < array20.length; i++) {
+            sum = sum + array20[i];
+        }
+        document.querySelector('.out-20').innerText = sum;
     }
-    document.querySelector('.out-20').innerText = sum;
-}
 
-document.querySelector('.b-20').onclick = f20;
+    document.querySelector('.b-20').onclick = f20;
