@@ -2,14 +2,13 @@
 // При нажатии b-1 выполняете функцию f1. Функция должна вывести в out-1 значение сохраненное под ключем two из массива a1. Возвратите это значение.
 // Первая задача дана в качестве примера.
 
-function f1() {
-    let a1 = {
+const f1 = () => {
+    const a1 = {
         "one": 15,
         "two": 16,
         "five": 20
     };
-    document.querySelector('.out-1').innerHTML = a1.two;
-    //return ...
+    document.querySelector('.out-1').innerText = a1.two;
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -20,18 +19,20 @@ document.querySelector('.b-1').onclick = f1;
 // Вывод, как и в предыдущем задании пишем "руками"
 
 
-function f2() {
-    let a2 = {
+const f2 = () => {
+    const a2 = {
         "one": "hello",
         "two": "mahai",
         "five": "hi"
     };
 
-    // return
+    document.querySelector('.out-2')
+
+    return a2.five
 }
 
 document.querySelector('.b-2').onclick = () => {
-    document.querySelector('.out-2').innerHTML = f2();
+    document.querySelector('.out-2').innerText = f2();
 }
 
 
@@ -40,8 +41,8 @@ document.querySelector('.b-2').onclick = () => {
 // Вывод, как и в предыдущем задании пишем "руками"
 
 
-function f3() {
-    let a3 = {
+const f3 = () => {
+    const a3 = {
         "one": "hello",
         "two": "mahai",
         "five": "hi",
@@ -49,20 +50,20 @@ function f3() {
         "odd": "hi",
         "mix": "mix"
     };
-    // return
+    return `${a3.five} ${a3.odd}`
 }
-
 document.querySelector('.b-3').onclick = () => {
-    document.querySelector('.out-3').innerHTML = f3();
+    document.querySelector('.out-3').innerText = f3();
 }
 
 
 // Task 4
-// Давайте напишем функцию f4, которая будет выводить массив a4 в out-4 при нажатии кнопки b-4. Формат вывода - ключ пробел значение перенос строки +' <br>'. Функция должна возвращать строку в указанном формате вывода.
+// Давайте напишем функцию f4, которая будет выводить массив a4 в out-4 при нажатии кнопки b-4. Формат вывода - ключ пробел значение перенос строки +' <br>'.
+// Функция должна возвращать строку в указанном формате вывода.
 // Обратите внимание на пробел перед br!!!!!!!!!
 
 
-let a4 = {
+const a4 = {
     "one": "hello",
     "two": "mahai",
     "five": "hi",
@@ -70,9 +71,13 @@ let a4 = {
     "odd": "hi",
     "mix": "mix"
 };
-function f4() {
 
-    // return out;
+const f4 = () => {
+    let out = "";
+    for (let key in a4) {
+        out += `${key} ${a4[key]} <br>`
+    }
+    return out;
 }
 
 document.querySelector('.b-4').onclick = () => {
@@ -80,21 +85,23 @@ document.querySelector('.b-4').onclick = () => {
 }
 
 // Task 5
-// Функция f4 жестко привязана к массиву a4. Это не удобно. Давайте напишем функцию f5, которая принимает массив как параметр и выводит его в формате указанном в функции в указанный блок (как второй параметр).
+// Функция f4 жестко привязана к массиву a4. Это не удобно. Давайте напишем функцию f5,
+// которая принимает массив как параметр и выводит его в формате указанном в функции в указанный блок (как второй параметр).
 
 
-function f5(arr, block) {
+const f5 = (arr, block) => {
     let out = '';
-    // цикл
-    // формат вывода `${key} : ${arr[key]} <br>`;
-    //
-    // тут вывод в блок block
+    for (let key in arr) {
+        out += `${key} : ${arr[key]} <br>`;
+    }
+
+    document.querySelector(block).innerHTML = out;
 }
 
 // давайте протестируем f5
 
 document.querySelector('.b-5').onclick = () => {
-    let a5 = {
+    const a5 = {
         "one": 1,
         "two": 2
     }
@@ -103,15 +110,30 @@ document.querySelector('.b-5').onclick = () => {
 
 
 // Task 6
-// Добавьте input .i-61 и i-62. При нажатии b-6 выполняете функцию f6. Функция должна получать из i-61 ключ, а из i-62 значение и добавлять его в массив a6. После этого, с помощью функции f5 выводите массив a6 в out-6.
+// Добавьте input .i-61 и i-62. При нажатии b-6 выполняете функцию f6.
+// Функция должна получать из i-61 ключ, а из i-62 значение и добавлять его в массив a6.
+// После этого, с помощью функции f5 выводите массив a6 в out-6.
 
-let a6 = {
+const a6 = {
     "b": 17,
     "e": 22
 };
 
-function f6() {
+const f6 = () => {
+    let out = '';
+    const i61 = document.querySelector('.i-61').value; // получаю ключ
+    const i62 = document.querySelector('.i-62').value; // получаю значение
+    a6[i61] = i62;
+    // console.log(a6);
 
+    for (let key in a6) {
+        out += `${key} : ${a6[key]} <br>`;
+    }
+    document.querySelector('.out-6').innerHTML = out;
+    //сделал чтобы очищались инпуты
+    document.querySelector('.i-61').value = "";
+    document.querySelector('.i-62').value = "";
+// непонятно что с помошью f5 тут делать
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -119,13 +141,22 @@ document.querySelector('.b-6').onclick = f6;
 // Task 7
 // Добавьте input .i-7. При нажатии b-7 выполняете функцию f7. Функция должна получать из i-7 ключ. Если такой ключ есть в a7 то выводить 1 в out-7, если нет - 0.
 
-let a7 = {
+const a7 = {
     "b": 17,
     "e": 22
 };
 
 
-function f7() {
+const f7 = () => {
+    const i7 = document.querySelector('.i-7').value;
+    for (let key in a7) {
+        if (key === i7) {
+            document.querySelector('.out-7').innerText = 1;
+            break; // вспомнил тут про него иначе всегда 0 выдавало
+        } else {
+            document.querySelector('.out-7').innerText = 0;
+        }
+    }
 
 }
 
@@ -134,21 +165,33 @@ document.querySelector('.b-7').onclick = f7;
 // Task 8
 // Добавьте input .i-8. При нажатии b-8 выполняете функцию f8. Функция должна выводить значение в out-8, если ключ введенный в i-8 есть в массиве, если нет - 0.
 
-let a8 = {
+const a8 = {
     "b": 17,
     "e": 22
 };
 
-function f8() {
+const f8 = () => {
+
+    const i8 = document.querySelector('.i-8').value;
+    for (let key in a8) {
+        if (key === i8) {
+            document.querySelector('.out-8').innerText = a8[key];
+            break;
+        } else {
+            document.querySelector('.out-8').innerText = 0;
+        }
+    }
 
 }
 
 document.querySelector('.b-8').onclick = f8;
 
 // Task 9
-// Добавьте input .i-9. При нажатии b-9 выполняете функцию f9. Функция должна вывести в out-9 все ключи массива a9, которые содержат значение, равное значению в input.i-9. Вывод через пробел. Если значений - нет - то выводить пустую строку.
+// Добавьте input .i-9. При нажатии b-9 выполняете функцию f9.
+// Функция должна вывести в out-9 все ключи массива a9, которые содержат значение, равное значению в input.i-9.
+// Вывод через пробел. Если значений - нет - то выводить пустую строку.
 
-let a9 = {
+const a9 = {
     "b": 17,
     "e": 22,
     "j": 17,
@@ -156,23 +199,41 @@ let a9 = {
     "d": 54
 };
 
-function f9() {
-
+const f9 = () => {
+    let out = "";
+    const i9 = Number(document.querySelector('.i-9').value); // короче без указания Number не работал вывод вообще
+    for (let key in a9) {
+        if (a9[key] === i9) {
+            out += key;
+            console.log(key);
+            //     break;
+            // } else {
+            //     document.querySelector('.out-9').innerText = 0;
+        }
+        document.querySelector('.out-9').innerText = out;
+    }
+// снова не могу додумать как здесь чтобы и не останавливался цикл и выводились все ключи
 }
 
 document.querySelector('.b-9').onclick = f9;
 
 // Task 10
-// Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
+// Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве.
+// Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
-function f10(arr, val) {
+const f10 = (arr, val) => {
 
-    //return true;
-    //return false;
+    for (let key in arr) { //тут явно делаю что т онеправильно, чувствую что упустил какую то информацию по циклам или именно ретерну
+        if (arr[key] === val) {
+            return "true"
+        } else
+            return "false";
+    }
+
 }
 
 document.querySelector('.b-10').onclick = () => {
-    let a10 = {
+    const a10 = {
         "k": 22,
         "d": 54,
         "m": 22,
@@ -182,9 +243,11 @@ document.querySelector('.b-10').onclick = () => {
 
 
 // Task 11
-// При нажатии b-11 выполняете функцию f11. Функция должна получить ключ из i-11 и удалить запись из массива a11 с таким ключем. После этого вывести массив в out-11. Для вывода используйте функцию f5.
+// При нажатии b-11 выполняете функцию f11.
+// Функция должна получить ключ из i-11 и удалить запись из массива a11 с таким ключем.
+// После этого вывести массив в out-11. Для вывода используйте функцию f5.
 
-let a11 = {
+const a11 = {
     "b": 17,
     "e": 22,
     "j": 17,
@@ -192,15 +255,30 @@ let a11 = {
     "d": 54
 };
 
-function f11() {
-}
+const f11 = () => {
 
+    let out = '';
+    const i11 = document.querySelector('.i-11').value; // получаю ключ
+    for (let key in a11) {
+
+        if (key === i11) {
+            delete a11.key;
+            console.log(a11);
+            break;
+        }
+
+        // out += `${key} : ${a11[key]} <br>`;
+    }
+    document.querySelector('.out-11').innerHTML = out;
+}
+// ммммм хуета))))))
 document.querySelector('.b-11').onclick = f11;
 
 // Task 12
-//  При нажатии b-12 выполняете функцию f12. Функция должна получить значение из i-12 и удалить запись из массива a12 с таким значением. После этого вывести массив в out-12. Для вывода используйте функцию f5.
+//  При нажатии b-12 выполняете функцию f12. Функция должна получить значение из i-12 и удалить запись из массива a12 с таким значением.
+//  После этого вывести массив в out-12. Для вывода используйте функцию f5.
 
-let a12 = {
+const a12 = {
     "b": 17,
     "e": 22,
     "j": 17,
@@ -208,7 +286,10 @@ let a12 = {
     "d": 17,
 };
 
-function f12() {
+const f12 = () => {
+    let out = '';
+    const i12 = document.querySelector('.i-12').value; // получаю значение
+
 
 }
 
@@ -217,14 +298,14 @@ document.querySelector('.b-12').onclick = f12;
 // Task 13
 // При нажатии b-13 выполняете функцию f13. Функция должна в out-13 выводить сумму значений массива a13 (только числа).
 
-let a13 = {
+const a13 = {
     'prim': 'hello',
     'one': 4,
     'testt': 'vodoley',
     'ivan': 6
 };
 
-function f13() {
+const f13 = () => {
 
 }
 
