@@ -306,7 +306,6 @@ const a13 = {
 };
 
 const f13 = () => {
-
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -315,15 +314,19 @@ document.querySelector('.b-13').onclick = f13;
 // При нажатии b-14 выполняете функцию f14. Функция должна в out-14 выводить нулевые (по индексу)  элементы вложенных массивов в a14. Вывод через пробел.
 // Ожидаемый вывод - 1 3 6 9
 
-let a14 = {
+const a14 = {
     'prim': [1, 2, 23],
     'one': [3, 4, 5],
     'testt': [6, 7, 8],
     'ivan': [9, 10]
 };
 
-function f14() {
-
+const f14 = () => {
+    for (let key in a14) {
+        console.log(a14[key][0])
+        document.querySelector('.out-14').innerHTML += `${a14[key][0]} `;
+    }
+//тут чет прям вроде легко в голове и понимаю что да как но все равно пришлось подумать хорошо
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -333,23 +336,24 @@ document.querySelector('.b-14').onclick = f14;
 
 // т.е ожидаем 1 2 23 3 5 6 7 8 9 10
 
-let a15 = {
+const a15 = {
     'prim': [1, 2, 23],
     'one': [3, 5],
     'testt': [6, 7, 8],
     'ivan': [9, 10]
 };
+// console.log(a15)
+// const f15 = () => {
+// for (let key in a15){
+//     for (let i = 0; i <a15[k])
+// }
+// }
 
-function f15() {
-
-}
-
-document.querySelector('.b-15').onclick = f15;
+// document.querySelector('.b-15').onclick = f15;
 
 // Task 16
 // При нажатии b-16 выполняете функцию f16. Функция должна в out-16 выводить элементы name вложенных массивов в a16. Вывод через пробел.
-
-let a16 = {
+const a16 = {
     "iis8sj": {
         "name": "Ivan",
         "age": 27,
@@ -364,8 +368,11 @@ let a16 = {
     },
 }
 
-function f16() {
-
+const f16 = () => {
+    for (let key in a16) {
+        console.log(a16[key].name)
+        document.querySelector('.out-16').innerHTML += `${a16[key].name} `;
+    }
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -374,7 +381,7 @@ document.querySelector('.b-16').onclick = f16;
 // Task 17
 // При нажатии b-17 выполняете функцию f17. Функция должна в out-17 выводить элементы name вложенных массивов в a17 для который age > 30. Вывод через пробел.
 
-let a17 = {
+const a17 = {
     "iis8sj": {
         "name": "Ivan",
         "age": 27,
@@ -389,27 +396,48 @@ let a17 = {
     },
 }
 
-function f17() {
+const f17 = () => {
+    for (let key in a17) {
 
+        if (a17[key].age > 30) {
+            document.querySelector('.out-17').innerHTML += `${a17[key].name} `;
+        }
+    }
 }
 
 document.querySelector('.b-17').onclick = f17;
 
 // Task 18
-// При нажатии b-18 выполняете функцию f18. Функция должна в out-18 вывести станции метро из массива a18 той ветки, которую пользователь ввел в i-18. Вывод станций - через пробел. Если ветка не найдена выводите пустую строку.
+// При нажатии b-18 выполняете функцию f18.
+// Функция должна в out-18 вывести станции метро из массива a18 той ветки, которую пользователь ввел в i-18.
+// Вывод станций - через пробел. Если ветка не найдена выводите пустую строку.
 
-let a18 = {
+const a18 = {
     "red": ['Akademmistechko', 'Nyvky', 'Universytet', 'Lisova'],
     "blue": ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
     "green": ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi']
 }
-
-function f18() {
+// console.log(a18.red);
+const f18 = () => {
+    const i18 = document.querySelector('.i-18').value;
+    for (let key in a18) {
+        if (key === i18) {
+            document.querySelector('.out-18').innerText += a18[key];
+            break;
+        }
+        else {
+            document.querySelector('.out-18').innerText = 'такой ветки нет'
+        }
+    }
+// нихерамба не работает не могу понять почему, уыли ставлю второе условие то если ввожу второй ключ появляется строка
 
 }
+document.querySelector('.b-18').onclick = f18;
+
 
 // Task 19
-// При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
+// При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19.
+// Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
 // Пользователь ввел Lisova - вывод red, ввел Obolon - вывод blue.
 
 let a19 = {
@@ -418,23 +446,24 @@ let a19 = {
     "green": ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi']
 }
 
-function f19() {
-
-}
-
-document.querySelector('.b-19').onclick = f19;
+// function f19() {
+//
+// }
+//
+// document.querySelector('.b-19').onclick = f19;
 
 // Task 20
-// При нажатии b-20 выполняете функцию f20. Функция должна в out-20 вывести название станции которые содержат переход на другую ветку. Такие станции маркируются 2. Вывод через пробел
+// При нажатии b-20 выполняете функцию f20. Функция должна в out-20 вывести название станции которые содержат переход на другую ветку.
+// Такие станции маркируются 2. Вывод через пробел
 
 let a20 = {
     "red": [['Akademmistechko', 1], ['Nyvky', 0], ['Universytet', 3], ['Lisova', 1]],
     "blue": [['Minska', 1], ['Obolon', 0], ['Pochaina', 2], ['Holosiivska', 0]],
     "green": [['Syrets', 1], ['Zoloti Vorota', 2], ['Klovska', 0], ['Vidubichi', 1]],
 }
-
-function f20() {
-
-}
-
-document.querySelector('.b-20').onclick = f20
+//
+// function f20() {
+//
+// }
+//
+// document.querySelector('.b-20').onclick = f20
