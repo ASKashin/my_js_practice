@@ -434,11 +434,11 @@ const f19 = () => {
     const i19 = document.querySelector('.i-19').value.toLowerCase();
 
     for (let key in a19) {
-       for ( let i = 0; i < a19[key].length; i++){
-           if  (a19[key][i].toLowerCase()===i19){ //так тут надо разобраться точно правильно ли сделал или можно проще
-               document.querySelector('.out-19').innerText= key;
-           }
-       }
+        for (let i = 0; i < a19[key].length; i++) {
+            if (a19[key][i].toLowerCase() === i19) { //так тут надо разобраться точно правильно ли сделал или можно проще
+                document.querySelector('.out-19').innerText = key;
+            }
+        }
     }
 }
 
@@ -457,14 +457,13 @@ const a20 = {
 const f20 = () => {
 
     for (let key in a20) {
-        for ( let i = 0; i < a20[key].length; i++){
-            console.log(a20[key][i]);
-            // if  (a20[key][i] === 2 ){
-            //     document.querySelector('.out-19').innerText += `${a20[key]}`;
+        for (let i = 0; i < a20[key].length; i++) {
+            console.log(a20[key][i][1]);
+            if  (a20[key][i][1] === 2 ) {
+                document.querySelector('.out-20').innerHTML += `${a20[key][i][0]} `;
             }
         }
     }
-
 }
 
 document.querySelector('.b-20').onclick = f20
