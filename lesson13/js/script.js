@@ -431,17 +431,15 @@ const a19 = {
 
 const f19 = () => {
 
-    const i19 = document.querySelector('.i-19').value;
+    const i19 = document.querySelector('.i-19').value.toLowerCase();
 
     for (let key in a19) {
-        if (a19[key] === i19) {
-            a19[key].forEach(name => document.querySelector('.out-19').innerHTML += `${name} `);
-            break;
-        } else {
-            document.querySelector('.out-19').innerText = 'такой ветки нет';
-        }
+       for ( let i = 0; i < a19[key].length; i++){
+           if  (a19[key][i].toLowerCase()===i19){ //так тут надо разобраться точно правильно ли сделал или можно проще
+               document.querySelector('.out-19').innerText= key;
+           }
+       }
     }
-
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -450,14 +448,23 @@ document.querySelector('.b-19').onclick = f19;
 // При нажатии b-20 выполняете функцию f20. Функция должна в out-20 вывести название станции которые содержат переход на другую ветку.
 // Такие станции маркируются 2. Вывод через пробел
 
-let a20 = {
+const a20 = {
     "red": [['Akademmistechko', 1], ['Nyvky', 0], ['Universytet', 3], ['Lisova', 1]],
     "blue": [['Minska', 1], ['Obolon', 0], ['Pochaina', 2], ['Holosiivska', 0]],
     "green": [['Syrets', 1], ['Zoloti Vorota', 2], ['Klovska', 0], ['Vidubichi', 1]],
 }
-//
-// function f20() {
-//
-// }
-//
-// document.querySelector('.b-20').onclick = f20
+
+const f20 = () => {
+
+    for (let key in a20) {
+        for ( let i = 0; i < a20[key].length; i++){
+            console.log(a20[key][i]);
+            // if  (a20[key][i] === 2 ){
+            //     document.querySelector('.out-19').innerText += `${a20[key]}`;
+            }
+        }
+    }
+
+}
+
+document.querySelector('.b-20').onclick = f20
