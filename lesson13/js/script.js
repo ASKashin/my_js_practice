@@ -98,7 +98,6 @@ const f5 = (arr, block) => {
     document.querySelector(block).innerHTML = out;
 }
 
-// давайте протестируем f5
 
 document.querySelector('.b-5').onclick = () => {
     const a5 = {
@@ -121,19 +120,13 @@ const a6 = {
 
 const f6 = () => {
     let out = '';
-    const i61 = document.querySelector('.i-61').value; // получаю ключ
-    const i62 = document.querySelector('.i-62').value; // получаю значение
-    a6[i61] = i62;
-    // console.log(a6);
+    const i61 = document.querySelector('.i-61').value;
+    a6[i61] = document.querySelector('.i-62').value;
 
-    for (let key in a6) {
-        out += `${key} : ${a6[key]} <br>`;
-    }
-    document.querySelector('.out-6').innerHTML = out;
-    //сделал чтобы очищались инпуты
+    f5(a6, '.out-6');
+
     document.querySelector('.i-61').value = "";
     document.querySelector('.i-62').value = "";
-// непонятно что с помошью f5 тут делать
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -149,15 +142,11 @@ const a7 = {
 
 const f7 = () => {
     const i7 = document.querySelector('.i-7').value;
-    for (let key in a7) {
-        if (key === i7) {
-            document.querySelector('.out-7').innerText = 1;
-            break; // вспомнил тут про него иначе всегда 0 выдавало
-        } else {
-            document.querySelector('.out-7').innerText = 0;
-        }
+    if (a7[i7]) {
+        document.querySelector('.out-7').innerText = 1;
+    } else {
+        document.querySelector('.out-7').innerText = 0;
     }
-
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -201,18 +190,15 @@ const a9 = {
 
 const f9 = () => {
     let out = "";
-    const i9 = Number(document.querySelector('.i-9').value); // короче без указания Number не работал вывод вообще
+    const i9 = Number(document.querySelector('.i-9').value);
     for (let key in a9) {
         if (a9[key] === i9) {
             out += key;
             console.log(key);
-            //     break;
-            // } else {
-            //     document.querySelector('.out-9').innerText = 0;
         }
         document.querySelector('.out-9').innerText = out;
     }
-// снова не могу додумать как здесь чтобы и не останавливался цикл и выводились все ключи
+
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -223,14 +209,12 @@ document.querySelector('.b-9').onclick = f9;
 
 const f10 = (arr, val) => {
 
-    for (let key in arr) { //тут явно делаю что т онеправильно, чувствую что упустил какую то информацию по циклам или именно ретерну
-        if (arr[key] === val) {
-            return "true"
-        } else
-            return "false";
+    for (let key in arr) {
+        return arr[key] === val;
     }
-
 }
+
+// тут я иди не все себе  пометил или чет лыжи не едут у меня)) 54 фолс тоже
 
 document.querySelector('.b-10').onclick = () => {
     const a10 = {
@@ -238,7 +222,7 @@ document.querySelector('.b-10').onclick = () => {
         "d": 54,
         "m": 22,
     }
-    document.querySelector('.out-10').innerHTML = f10(a10, 22);
+    document.querySelector('.out-10').innerHTML = String(f10(a10, 54));
 };
 
 
@@ -257,21 +241,10 @@ const a11 = {
 
 const f11 = () => {
 
-    let out = '';
-    const i11 = document.querySelector('.i-11').value; // получаю ключ
-    for (let key in a11) {
+    delete a11[document.querySelector('.i-11').value];
 
-        if (key === i11) {
-            delete a11.key;
-            console.log(a11);
-            break;
-        }
-
-        // out += `${key} : ${a11[key]} <br>`;
-    }
-    document.querySelector('.out-11').innerHTML = out;
+    f5(a11, '.out-11');
 }
-// ммммм хуета))))))
 document.querySelector('.b-11').onclick = f11;
 
 // Task 12
@@ -288,9 +261,14 @@ const a12 = {
 
 const f12 = () => {
     let out = '';
-    const i12 = document.querySelector('.i-12').value; // получаю значение
+    const i12 = Number(document.querySelector('.i-12').value);
 
-
+    for (let key in a12) {
+        if (a12[key] === i12) {
+            delete a12[key];
+        }
+    }
+    f5(a12, '.out-12');
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -306,6 +284,15 @@ const a13 = {
 };
 
 const f13 = () => {
+
+    let sum = 0;
+
+    for (let key in a13) {
+        if (typeof a13[key] === "number") {
+            sum += a13[key];
+        }
+    }
+    document.querySelector('.out-13').innerText = sum;
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -326,7 +313,6 @@ const f14 = () => {
         console.log(a14[key][0])
         document.querySelector('.out-14').innerHTML += `${a14[key][0]} `;
     }
-//тут чет прям вроде легко в голове и понимаю что да как но все равно пришлось подумать хорошо
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -342,14 +328,16 @@ const a15 = {
     'testt': [6, 7, 8],
     'ivan': [9, 10]
 };
-// console.log(a15)
-// const f15 = () => {
-// for (let key in a15){
-//     for (let i = 0; i <a15[k])
-// }
-// }
 
-// document.querySelector('.b-15').onclick = f15;
+const f15 = () => {
+    let out = "";
+    for (let key in a15) {
+        a15[key].forEach(num => out += `${num} `)
+    }
+    document.querySelector('.out-15').innerText = out;
+}
+
+document.querySelector('.b-15').onclick = f15;
 
 // Task 16
 // При нажатии b-16 выполняете функцию f16. Функция должна в out-16 выводить элементы name вложенных массивов в a16. Вывод через пробел.
@@ -417,19 +405,14 @@ const a18 = {
     "blue": ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
     "green": ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi']
 }
-// console.log(a18.red);
 const f18 = () => {
     const i18 = document.querySelector('.i-18').value;
-    for (let key in a18) {
-        if (key === i18) {
-            document.querySelector('.out-18').innerText += a18[key];
-            break;
-        }
-        else {
-            document.querySelector('.out-18').innerText = 'такой ветки нет'
-        }
+
+    if (a18[i18]) {
+        a18[i18].forEach(name => document.querySelector('.out-18').innerHTML += `${name} `);
+    } else {
+        document.querySelector('.out-18').innerText = 'такой ветки нет';
     }
-// нихерамба не работает не могу понять почему, уыли ставлю второе условие то если ввожу второй ключ появляется строка
 
 }
 document.querySelector('.b-18').onclick = f18;
@@ -440,17 +423,28 @@ document.querySelector('.b-18').onclick = f18;
 // Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
 // Пользователь ввел Lisova - вывод red, ввел Obolon - вывод blue.
 
-let a19 = {
+const a19 = {
     "red": ['Akademmistechko', 'Nyvky', 'Universytet', 'Lisova'],
     "blue": ['Minska', 'Obolon', 'Pochaina', 'Holosiivska'],
     "green": ['Syrets', 'Zoloti Vorota', 'Klovska', 'Vidubichi']
 }
 
-// function f19() {
-//
-// }
-//
-// document.querySelector('.b-19').onclick = f19;
+const f19 = () => {
+
+    const i19 = document.querySelector('.i-19').value;
+
+    for (let key in a19) {
+        if (a19[key] === i19) {
+            a19[key].forEach(name => document.querySelector('.out-19').innerHTML += `${name} `);
+            break;
+        } else {
+            document.querySelector('.out-19').innerText = 'такой ветки нет';
+        }
+    }
+
+}
+
+document.querySelector('.b-19').onclick = f19;
 
 // Task 20
 // При нажатии b-20 выполняете функцию f20. Функция должна в out-20 вывести название станции которые содержат переход на другую ветку.
