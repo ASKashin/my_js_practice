@@ -169,14 +169,22 @@ document.querySelector('.b-10').addEventListener('click', () => {
 // Task 11
 //При нажатии .b-11 выполняете функцию f11. Функция должна c помощью for in перебрать объект a11 и вывести в out-11 только те значения, которые больше 10. Вывод - через пробел.
 
-let a11 = {
+const a11 = {
     one: 11,
     two: 7,
     three: 13,
     four: 0
 }
 
-function f11() {
+const f11 = () => {
+    let out = '';
+    for (let key in a11) {
+        if (a11[key] > 10) {
+            out += `${a11[key]} `;
+        }
+        document.querySelector('.out-11').innerText = out;
+    }
+
 
 }
 
@@ -185,9 +193,12 @@ document.querySelector('.b-11').addEventListener('click', f11);
 // Task 12
 //При нажатии .b-12 выполняете функцию f12. Функция должна c помощью for of перебрать a12 и вывести в out-12 через пробел.
 
-let a12 = [4, 5, 6, 7];
+const a12 = [4, 5, 6, 7];
 
-function f12() {
+const f12 = () => {
+    for (let item of a12) {
+        document.querySelector('.out-12').innerHTML += `${item} `;
+    }
 
 }
 
@@ -197,10 +208,16 @@ document.querySelector('.b-12').addEventListener('click', f12);
 // Task 13
 //При нажатии .b-13 выполняете функцию f13. Функция должна c помощью for of перебрать a13 и вывести по символу в out-13 через пробел.
 
-let a13 = 'testone';
+const a13 = 'testone';
 
-function f13() {
+const f13 = () => {
+    let a113 = "";
+    for (let item of a13) {
+        a113 += `${item} `; // тут я ваще не знал как сделать и ради прикола просто попробовал так
+    }
+    document.querySelector('.out-13').innerText = a113;
 
+// console.log(a13.split(' ')); почему то думал что это тоже должно разбить
 }
 
 document.querySelector('.b-13').addEventListener('click', f13);
@@ -209,20 +226,30 @@ document.querySelector('.b-13').addEventListener('click', f13);
 // Task 14
 //При нажатии .b-14 выполняете функцию f14. Функция должна c помощью for of перебрать a14 и вывести по элементам в out-14 через пробел.
 
-let a14 = new Set([4, 5, 6]);
+const a14 = new Set([4, 5, 6]);
 
-function f14() {
-
+const f14 = () => {
+    let a114 = "";
+    for (let item of a14) {
+        a114 += `${item} `
+    }
+    document.querySelector('.out-14').innerText = a114;
 }
 
 document.querySelector('.b-14').addEventListener('click', f14);
 
 // Task 15
-//При нажатии .b-15 выполняете функцию f15. Функция должна получить NodeList элементов .out-15 c помощью document.querySelectorAll, затем c помощью for of перебрать полученную коллекцию элементов .out-15 записать внутрь них число 15 ( затерев содержимое).
+//При нажатии .b-15 выполняете функцию f15. Функция должна получить NodeList элементов .out-15 c помощью document.querySelectorAll,
+// затем c помощью for of перебрать полученную коллекцию элементов .out-15 записать внутрь них число 15 ( затерев содержимое).
 
 
-function f15() {
+const f15 = () => {
 
+    const out15 = document.querySelectorAll('div.out-15');
+    console.log(out15);
+    for (let item of out15) {
+    item.innerText = 15;
+    }
 }
 
 document.querySelector('.b-15').addEventListener('click', f15);
