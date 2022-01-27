@@ -143,10 +143,17 @@ document.querySelector('.b-8').addEventListener('click', () => {
 //При нажатии .b-9 выполняете функцию f9. Функция должна возвращать в out-9 самый большой индекс из вложенных в a9 массивов.
 // В данном случае это 4. Т.е. самый большой вложенный массив это [0,0,0,0,0], а в нем самый большой индекс 4.
 
-let a9 = [[4, 3, 2], [2, 5], [0, 0, 0, 0, 0]];
+const a9 = [[4, 3, 2], [2, 5], [0, 0, 0, 0, 0]];
 
-function f9() {
+const f9 = () => {
 
+    let max = a9[0].length;
+    for (let item of a9) {
+        if (item.length > max) {
+            max = item.length - 1; // тут затупил и сразу длинну выводил а не индекс
+        }
+    }
+    return max;
 }
 
 document.querySelector('.b-9').addEventListener('click', () => {
@@ -158,7 +165,7 @@ document.querySelector('.b-9').addEventListener('click', () => {
 
 let a10 = [4, 6, 9, 'Hello'];
 
-function f10() {
+function f10() { // тут что то не особо понимаю как вообще
 
 }
 
@@ -184,8 +191,6 @@ const f11 = () => {
         }
         document.querySelector('.out-11').innerText = out;
     }
-
-
 }
 
 document.querySelector('.b-11').addEventListener('click', f11);
@@ -199,11 +204,8 @@ const f12 = () => {
     for (let item of a12) {
         document.querySelector('.out-12').innerHTML += `${item} `;
     }
-
 }
-
 document.querySelector('.b-12').addEventListener('click', f12);
-
 
 // Task 13
 //При нажатии .b-13 выполняете функцию f13. Функция должна c помощью for of перебрать a13 и вывести по символу в out-13 через пробел.
@@ -248,7 +250,7 @@ const f15 = () => {
     const out15 = document.querySelectorAll('div.out-15');
     console.log(out15);
     for (let item of out15) {
-    item.innerText = 15;
+        item.innerText = 15;
     }
 }
 
